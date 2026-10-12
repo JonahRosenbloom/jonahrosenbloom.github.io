@@ -16,8 +16,8 @@
   var links = [
     ['home', 'Home', B + 'index.html'],
     ['about', 'About', B + 'about/index.html'],
-    ['blog', 'Blog', 'https://jerinfo88.wixsite.com/jonahrosenbloom/blog'],
-    ['portfolio', 'Portfolio Page', 'https://jerinfo88.wixsite.com/jonahrosenbloom/portfolio']
+    ['blog', 'Blog', 'blog/index.html'],
+    ['portfolio', 'Portfolio Page', 'portfolio/index.html']
   ];
   var navHtml = links.map(function (l) {
     return '<li><a class="site-header__link" data-part="menu-item-link" href="' + l[2] + '"' + cur(l[0]) + '>' + l[1] + '</a></li>';
