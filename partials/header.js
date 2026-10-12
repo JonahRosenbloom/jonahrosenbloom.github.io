@@ -1,13 +1,3 @@
-/* Shared site header, included on every page with:
-     <script>var SITE_BASE = "";</script>          (or "../" from inside /about/)
-     <script>var SITE_PAGE = "home";</script>       (or "about")
-     <script src="partials/header.js"></script>     (or "../partials/header.js")
-   Uses document.write so it lands exactly where the <script> tag sits, and
-   ships its own CSS classes (site-header__*) rather than reusing the captured
-   Wix markup: that markup's layout depends on component IDs Wix generates
-   separately per page, so it only ever renders correctly on the page it was
-   captured from. Plain, hand-written CSS is what makes one header file safe
-   to share across pages. Styling lives in overrides.css. */
 (function () {
   var B = (typeof SITE_BASE === 'string') ? SITE_BASE : '';
   var PAGE = (typeof SITE_PAGE === 'string') ? SITE_PAGE : '';
@@ -16,8 +6,8 @@
   var links = [
     ['home', 'Home', B + 'index.html'],
     ['about', 'About', B + 'about/index.html'],
-    ['blog', 'Blog', 'blog/index.html'],
-    ['portfolio', 'Portfolio Page', 'portfolio/index.html']
+    ['blog', 'Blog', B + 'blog/index.html'],
+    ['portfolio', 'Portfolio Page', B + 'portfolio/index.html']
   ];
   var navHtml = links.map(function (l) {
     return '<li><a class="site-header__link" data-part="menu-item-link" href="' + l[2] + '"' + cur(l[0]) + '>' + l[1] + '</a></li>';
