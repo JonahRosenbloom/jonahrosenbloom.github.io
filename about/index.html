@@ -1,1 +1,221 @@
-<h1>Coming Soon!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Jonah Rosenbloom</title>
+  <meta
+    name="description"
+    content="Meet Jonah Rosenbloom, a Concordia Electrical Engineering student interested in programming, mathematical modeling, circuits, and practical engineering systems."
+  >
+  <meta property="og:title" content="About | Jonah Rosenbloom">
+  <meta property="og:site_name" content="Jonah Rosenbloom">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../about.css">
+  <link rel="stylesheet" href="../overrides.css">
+
+  <style>
+    .about-page {
+      width: min(1100px, calc(100% - 2rem));
+      margin-inline: auto;
+      padding-block: 3rem;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 5rem;
+    }
+
+    .journey__image,
+    .skill-card__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .journey__image {
+      max-height: 560px;
+      aspect-ratio: 3 / 4;
+    }
+
+    .skills__intro {
+      max-width: 680px;
+      margin-bottom: 2rem;
+    }
+
+    .skills__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card { min-width: 0; }
+
+    .skill-card__image {
+      aspect-ratio: 1;
+      margin-bottom: 1rem;
+    }
+
+    .skill-card h3 { margin-block: 0 0.5rem; }
+    .skill-card p { margin-top: 0; }
+
+    @media (max-width: 760px) {
+      .about-page { padding-block: 2rem; }
+      .journey {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .journey__image { max-height: 480px; }
+      .skills__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 480px) {
+      .skills__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="responsive">
+  <script>
+    const SITE_BASE = "../";
+    const SITE_PAGE = "about";
+  </script>
+  <script src="../partials/header.js"></script>
+
+  <main class="about-page">
+    <section class="journey" aria-labelledby="journey-title">
+      <div class="journey__media">
+        <img
+          class="journey__image"
+          src="../assets/img/about-journey.jpg"
+          alt="A workspace related to electronics and engineering projects"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="journey__content">
+        <h1 id="journey-title">A Bit About Me</h1>
+        <p>
+          I’m Jonah, an Electrical Engineering Co-op student at Concordia University.
+          I’ve been programming since I was young, and I enjoy using code and math
+          to understand problems, build tools, and test ideas.
+        </p>
+        <p>
+          Some of my projects include a Python climate model, a scheduling tool
+          that uses recursive search, and a Tic-Tac-Toe game with different AI
+          difficulty levels. I’m also interested in circuit design, microcontrollers,
+          and how software connects with physical systems. I’m still building my
+          engineering experience, and I’m keen to learn by working on practical
+          projects with other people.
+        </p>
+      </div>
+    </section>
+
+    <section class="skills" aria-labelledby="skills-title">
+      <div class="skills__intro">
+        <h2 id="skills-title">What I Work On</h2>
+        <p>
+          A snapshot of the areas I’ve worked with so far and the engineering topics
+          I’m continuing to explore.
+        </p>
+      </div>
+
+      <div class="skills__grid">
+        <article class="skill-card">
+          <img
+            class="skill-card__image"
+            src="../assets/img/skill-robotics.jpg"
+            alt="Illustrative image related to programming and technology"
+            loading="lazy"
+          >
+          <h3>Programming</h3>
+          <p>
+            I use Python and Java to build projects, automate tasks, and work through
+            technical problems. I also have experience with HTML.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <img
+            class="skill-card__image"
+            src="../assets/img/skill-pcb-design.jpg"
+            alt="Illustrative image related to electronics and circuit boards"
+            loading="lazy"
+          >
+          <h3>Circuits &amp; Electronics</h3>
+          <p>
+            I’m interested in circuit design and PCB layout, including using tools
+            such as KiCad, and in understanding how electronic systems work.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <img
+            class="skill-card__image"
+            src="../assets/img/skill-microcontrollers.jpg"
+            alt="Illustrative image related to microcontrollers and physical computing"
+            loading="lazy"
+          >
+          <h3>Physical Computing</h3>
+          <p>
+            I’m interested in microcontrollers and the connection between software
+            and hardware, and I’m continuing to develop my hands-on experience.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <img
+            class="skill-card__image"
+            src="../assets/img/skill-hardware.jpg"
+            alt="Illustrative image related to technical projects"
+            loading="lazy"
+          >
+          <h3>Mathematical Modeling</h3>
+          <p>
+            I’ve used Python to model climate-related processes and explore how
+            changing inputs affect a system’s behavior.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <img
+            class="skill-card__image"
+            src="../assets/img/skill-signal-analysis.jpg"
+            alt="Illustrative image related to algorithms and computation"
+            loading="lazy"
+          >
+          <h3>Algorithms &amp; Problem-Solving</h3>
+          <p>
+            I’ve built projects involving recursive search, scheduling constraints,
+            and game AI, including a Tic-Tac-Toe opponent using minimax.
+          </p>
+        </article>
+
+        <article class="skill-card">
+          <img
+            class="skill-card__image"
+            src="../assets/img/skill-power-systems.jpg"
+            alt="Illustrative image related to electrical engineering"
+            loading="lazy"
+          >
+          <h3>Engineering Interests</h3>
+          <p>
+            I’m exploring areas such as embedded systems and power engineering while
+            building a stronger foundation in electrical engineering.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="../partials/footer.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>
