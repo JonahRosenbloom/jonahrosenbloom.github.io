@@ -13,94 +13,141 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../about.css">
   <link rel="stylesheet" href="../overrides.css">
-  <link rel="stylesheet" href="../styles.css">
-  
 
-<style>
-  .about-page {
-    width: min(1100px, calc(100% - 2rem));
-    margin-inline: auto;
-    padding-block: 3rem;
-  }
-
-  .journey {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 5rem;
-  }
-
-  .journey__image,
-  .skill-card__image {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .journey__image {
-    max-height: 560px;
-    aspect-ratio: 3 / 4;
-  }
-
-  .skills__intro {
-    max-width: 680px;
-    margin-bottom: 2rem;
-  }
-
-  .skills__grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-
-  .skill-card {
-    min-width: 0;
-  }
-
-  .skill-card__image {
-    aspect-ratio: 1;
-    margin-bottom: 1rem;
-  }
-
-  .skill-card h3 {
-    margin-block: 0 0.5rem;
-  }
-
-  .skill-card p {
-    margin-top: 0;
-  }
-
-  @media (max-width: 760px) {
+  <style>
+    /* About page styling. Matches the site's dark navy, white, and cyan theme. */
     .about-page {
-      padding-block: 2rem;
+      box-sizing: border-box;
+      width: min(1200px, calc(100% - 2.5rem));
+      margin-inline: auto;
+      padding-block: clamp(2.5rem, 6vw, 6rem);
+      color: #f4f7fb;
+      font-family: 'ibm-plex-sans', 'IBM Plex Sans', Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after { box-sizing: border-box; }
+
     .journey {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: clamp(2rem, 5vw, 5rem);
+      margin-bottom: clamp(4rem, 8vw, 7rem);
+    }
+
+    .journey__media { min-width: 0; }
+
+    .journey__image,
+    .skill-card__image {
+      display: block;
+      width: 100%;
+      object-fit: cover;
     }
 
     .journey__image {
-      max-height: 480px;
+      aspect-ratio: 4 / 5;
+      max-height: 600px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #111b2d;
+    }
+
+    .journey__content h1,
+    .skills__intro h2 {
+      margin: 0 0 1.25rem;
+      color: #ffffff;
+      font-family: 'tektur', 'ibm-plex-mono', sans-serif;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+
+    .journey__content h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+    .skills__intro h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); }
+
+    .journey__content p,
+    .skills__intro p,
+    .skill-card p {
+      color: rgba(244, 247, 251, 0.78);
+      font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+      line-height: 1.8;
+    }
+
+    .journey__content p + p { margin-top: 1rem; }
+
+    .skills__intro {
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .skills__intro h2::after {
+      content: '';
+      display: block;
+      width: 3.5rem;
+      height: 3px;
+      margin-top: 1rem;
+      background: #00f0ff;
     }
 
     .skills__grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
     }
-  }
 
-  @media (max-width: 480px) {
-    .skills__grid {
-      grid-template-columns: 1fr;
+    .skill-card {
+      min-width: 0;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: border-color 180ms ease, transform 180ms ease;
     }
-  }
-</style>
 
+    .skill-card:hover {
+      border-color: rgba(0, 240, 255, 0.55);
+      transform: translateY(-2px);
+    }
+
+    .skill-card__image {
+      aspect-ratio: 16 / 10;
+      margin-bottom: 1rem;
+      background: #111b2d;
+    }
+
+    .skill-card h3 {
+      margin: 0 0 0.5rem;
+      color: #00f0ff;
+      font-family: 'ibm-plex-mono', monospace;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .skill-card p { margin: 0; font-size: 0.93rem; }
+
+    @media (max-width: 800px) {
+      .journey {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.75rem;
+      }
+
+      .journey__media { max-width: 520px; }
+      .journey__image { aspect-ratio: 16 / 10; max-height: 420px; }
+      .skills__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      .about-page { width: min(100% - 2rem, 1200px); }
+      .skills__grid { grid-template-columns: minmax(0, 1fr); }
+      .skill-card { padding: 0.85rem; }
+    }
+  </style>
 </head>
 
 <body class="responsive">
